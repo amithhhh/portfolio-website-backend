@@ -13,10 +13,13 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: "https://amithek.onrender.com",
-    methods: "GET,POST",
-    credentials: true
+    origin: "https://amithek.onrender.com",  // ✅ Allow frontend
+    credentials: true,  // ✅ Allow cookies
+    methods: ["GET", "POST", "PUT", "DELETE"],  // ✅ Allow these methods
+    allowedHeaders: ["Content-Type", "Authorization"],  // ✅ Headers to allow
+    exposedHeaders: ["Set-Cookie"],  // ✅ Allow frontend to access cookies
 }));
+
 
 connectDB();
 
