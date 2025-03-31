@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: "*",
+    origin: "https://amithek.onrender.com",
     methods: "GET,POST",
     credentials: true
 }));
@@ -24,6 +24,6 @@ app.use('/api/auth', authRouter)
 app.use('/api/message', messageRoute)
 app.use('/api/',productRoute)
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT
 
 app.listen(PORT, () => console.log("server running on port 5000"))
