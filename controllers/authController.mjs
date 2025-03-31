@@ -51,7 +51,7 @@ export const loginAdmin = async (req, res) => {
         res.cookie("token", token, {
             httpOnly: true,
             secure: true,
-            sameSite: false,
+            sameSite: "None",
             maxAge: 3600000
         })
         res.json({message: "Login Successful"});
